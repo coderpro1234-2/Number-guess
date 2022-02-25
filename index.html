@@ -52,6 +52,9 @@ function Guess() {
   document.getElementById("demo").innerHTML = text;
 }
 function giveup() {
+  if (exit == "1"){
+    return "0";
+  }
   text = "The number is "+number+"!"
   exit = "1"
   document.getElementById("demo").innerHTML = text;
