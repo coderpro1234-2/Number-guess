@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+  }
+  </style>
+<title>Number Guesser</title>
+<script>
+  exit = "0"
+  function RandomNumIn() {
+    return Math.floor(Math.random() * (50 - 1 + 1)) + 1;
+  }
+  number = RandomNumIn();
+  </script>
+</head>
+<body>
+<center>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h1>Number Guesser</h1>
+  <button onclick="Guess()">Guess</button><br><br>
+  <button onclick="giveup()">Give up</button><br><br>
+  <button onclick="window.location.reload()">Retry</button>
+  <p id="demo"></p>
+</center>
+<script>
+function Guess() {
+  if (exit == "1"){
+    return "0";
+  }
+  let text;
+  let numb = prompt("Please enter a number");
+  if (numb == null || numb == "" || isNaN(numb)) {
+    text = "Please Enter a valid number";
+  } 
+  else {
+    if (numb == number) {
+      text = "Well done"
+      exit = "1"
+    }
+    else {
+      if (numb > number) {
+        text = "Lower"
+      }
+      if (numb < number) {
+        text = "Higher"
+      }
+    }
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+function giveup() {
+  if (exit == "1"){
+    return "0";
+  }
+  text = "The number is "+number+"!"
+  exit = "1"
+  document.getElementById("demo").innerHTML = text;
+}
+</script>
+
+</body>
+</html>
