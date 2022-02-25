@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Number Guesser</title>
+<script>
+  exit = "0"
+  function RandomNumIn() {
+    return Math.floor(Math.random() * (50 - 1 + 1)) + 1;
+  }
+  number = RandomNumIn();
+  </script>
+</head>
+<body>
+<center>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h1>Number Guesser</h1>
+  <button onclick="myFunction()">Guess</button>
+  <p id="demo"></p>
+</center>
+<script>
+function myFunction() {
+  if (exit == "1"){
+    return "0";
+  }
+  let text;
+  let numb = prompt("Please enter a number");
+  if (numb == null || numb == "" || isNaN(numb)) {
+    text = "Please Enter a valid number";
+  } 
+  else {
+    if (numb == number) {
+      text = "Well done"
+      exit = "1"
+    }
+    else {
+      if (numb > number) {
+        text = "Lower"
+      }
+      if (numb < number) {
+        text = "Higher"
+      }
+    }
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+</script>
+
+</body>
+</html>
