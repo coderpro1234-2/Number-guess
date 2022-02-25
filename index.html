@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,11 +21,12 @@
   <br>
   <br>
   <h1>Number Guesser</h1>
-  <button onclick="myFunction()">Guess</button>
+  <button onclick="Guess()">Guess</button><br><br>
+  <button onclick="giveup()">Give up</button>
   <p id="demo"></p>
 </center>
 <script>
-function myFunction() {
+function Guess() {
   if (exit == "1"){
     return "0";
   }
@@ -49,6 +49,11 @@ function myFunction() {
       }
     }
   }
+  document.getElementById("demo").innerHTML = text;
+}
+function giveup() {
+  text = "The number is "+number+"!"
+  exit = "1"
   document.getElementById("demo").innerHTML = text;
 }
 </script>
