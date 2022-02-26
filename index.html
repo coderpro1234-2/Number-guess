@@ -22,24 +22,32 @@
 <body>
 <center>
   <h1>Number Guesser</h1>
+  <h3>Guess A Number Between 1 and 50</h3>
+  <input type="text" id="guessed"></input>
   <button onclick="Guess()">Guess</button><br><br>
   <button onclick="giveup()">Give up</button><br><br>
   <button onclick="window.location.reload()">Retry</button>
   <p id="demo"></p>
 </center>
 <script>
+document.addEventListener("keypress", function(event) {
+  if (event.keyCode == 13) {
+    Guess();
+  }
+});
 function Guess() {
   if (exit == "1"){
     return "0";
   }
   let text;
-  let numb = prompt("Please enter a number");
+  const guessContainer = document.getElementById("guessed");
+  let numb = Number(guessContainer.value)
   if (numb == null || numb == "" || isNaN(numb)) {
-    text = "Please Enter a valid number";
+    text = "Please Enter A Valid number";
   } 
   else {
     if (numb == number) {
-      text = "Well done"
+      text = "Well Done!"
       exit = "1"
     }
     else {
