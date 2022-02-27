@@ -24,7 +24,7 @@
 <center>
   <h1>Number Guesser</h1>
   <h3>Guess A Number Between 1 and 50</h3>
-  <h4 id="demo">Please Enter A Number</h4>
+  <h4 id="output">Please Enter A Number</h4>
   <input type="text" id="guessed"></input>
   <button onclick="Guess()">Guess</button><br><br>
   <button onclick="giveup()">Give up</button><br><br>
@@ -40,6 +40,7 @@ function Guess() {
   if (exit == "1"){
     return "0";
   }
+  document.getElementById('output').value = ''
   let text;
   const guessContainer = document.getElementById("guessed");
   let numb = Number(guessContainer.value)
@@ -60,7 +61,7 @@ function Guess() {
       }
     }
   }
-  document.getElementById("demo").innerHTML = text;
+  document.getElementById("output").innerHTML = text;
 }
 function giveup() {
   if (exit == "1"){
@@ -68,7 +69,7 @@ function giveup() {
   }
   text = "The Number Was "+number+"!"
   exit = "1"
-  document.getElementById("demo").innerHTML = text;
+  document.getElementById("output").innerHTML = text;
 }
 </script>
 
