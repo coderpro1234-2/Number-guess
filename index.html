@@ -40,7 +40,6 @@ function Guess() {
   if (exit == "1"){
     return "0";
   }
-  document.getElementById("guessed").value = ""
   let text;
   const guessContainer = document.getElementById("guessed");
   let numb = Number(guessContainer.value)
@@ -62,6 +61,7 @@ function Guess() {
     }
   }
   document.getElementById("h4").innerHTML = text;
+  document.getElementById("guessed").value = ""
 }
 function giveup() {
   if (exit == "1"){
@@ -69,7 +69,7 @@ function giveup() {
   }
   text = "The Number Was "+number+"!"
   exit = "1"
-  document.getElementById("output").innerHTML = text;
+  document.getElementById("h4").innerHTML = text;
 }
 </script>
 
