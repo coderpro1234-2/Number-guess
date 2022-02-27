@@ -44,7 +44,7 @@ function Guess() {
   const guessContainer = document.getElementById("guessed");
   let numb = Number(guessContainer.value)
   if (numb == null || numb == "" || isNaN(numb)) {
-    text = "Please Enter A Valid number";
+    text = "Please Enter A Valid Number";
   } 
   else {
     if (numb == number) {
@@ -53,10 +53,10 @@ function Guess() {
     }
     else {
       if (numb > number) {
-        text = "Lower"
+        text = "Lower Than "+numb
       }
       if (numb < number) {
-        text = "Higher"
+        text = "Higher Than "+numb
       }
     }
   }
